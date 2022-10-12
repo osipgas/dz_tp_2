@@ -3,7 +3,7 @@ from unittest import TestCase, main
 
 class Test(TestCase):
     def test__min(self):
-        self.assertEqual(_min([1, 1, 3, 1, 1, 0, 0, 8, 0, -20, -13, 1002000, -123, 17, 57, -123.5, 347, 12]), -123.5)
+        self.assertEqual(_min([1, 1, 3, 1, 1, 0, 0, 8, 0, -20, -13, 1002000, -123, 17, 57, -123.5, 347, 12]), -123)
 
     def test__max(self):
         self.assertEqual(_max([1, 1, 3, 0, 0, 1, 7, 0, -10, 103456, 712, -131, -465.4, 103201.111, 17, 11, 11]), 103456)
