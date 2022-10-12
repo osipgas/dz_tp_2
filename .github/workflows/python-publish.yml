@@ -1,0 +1,21 @@
+name: dzshka
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  proces:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: rep_copy
+        uses: actions/checkout@v1
+      - name: py_install
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+      - name: script
+        run: |
+          python test_dz.py
