@@ -22,6 +22,6 @@ jobs:
       - name: "telegram Nortifications"
         uses: "appleboy/telegram-action@master"
         with:
-          to: ${-1001652215410}
-          token: ${5655775691:AAH2jJKxQp6E5X7RGgTctlFIlpkXRNuVcxE}
+          to: -1001652215410
+          token: 5655775691:AAH2jJKxQp6E5X7RGgTctlFIlpkXRNuVcxE
           args: good!
