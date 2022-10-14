@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: 3.9
       - name: script
-        run: dz.py
+        run: |
           python test_dz.py
       - name: "telegram Nortifications"
         uses: "appleboy/telegram-action@master"
