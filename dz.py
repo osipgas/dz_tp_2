@@ -11,12 +11,10 @@ def _file(q):
             try:
                 float(i)
             except ValueError:
-                print('Данные некорректны, отредактируйте файл и попробуйте снова!')
-                quit()
+                return False
     if len(q) > 10 ** 6 or len(q) == 0:
-        print('Данные некорректны, отредактируйте файл и попробуйте снова!')
-        quit()
-    return 'Данные корректны, можем продолжать!\n'
+        return False
+    return True
 
 def _min(x):
     minimum = x[0]
@@ -101,8 +99,11 @@ def grafic(func):
 def osip():
     filename = input('Введите имя файла:')
     f = [i for i in open(filename + '.txt', encoding='utf-8').read().split()]
-    print(_file(f))
-    what_to_do = int(input('Выберите действие:\n1) Применить функцию к входному файлу.\n2) Тест на скорость.\n3) Построить график.\nВвод:'))
+    if _file(f):
+        print('Данные корректны, можем продолжать!\n')
+    else:
+        print('Данные некорректны, отредактируйте файл и попробуйте снова!')
+        quit()
 
     def MinTimeTest():
         return f'10.000 чисел - {test(_min, first_list)}\n500.000 чисел - {test(_min, second_list)}\n10.000.000 чисел - {test(_min, therd_list)}'
