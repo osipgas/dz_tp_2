@@ -31,10 +31,17 @@ def _max(x):
     return maximum
 
 def _sum(x):
-    return reduce(lambda a, b: a + b, x)
+    s = 0
+    for i in x:
+        s += i
+    return s
+
 
 def _mult(x):
-    return reduce(lambda a, b: a * b, x)
+    s = 1
+    for i in x:
+        s *= i
+    return s
 
 def test(x, y):
     start_time = time.time()
@@ -98,12 +105,20 @@ def grafic(func):
     tk.mainloop()
 def osip():
     filename = input('Введите имя файла:')
-    f = [i for i in open(filename + '.txt', encoding='utf-8').read().split()]
-    if _file(f):
+    c = open(filename + '.txt', encoding='utf-8').read().split()
+    f = []
+    if _file(c):
         print('Данные корректны, можем продолжать!\n')
+        for i in c:
+            try:
+                f.append(int(i))
+            except ValueError:
+                f.append(float(i))
     else:
         print('Данные некорректны, отредактируйте файл и попробуйте снова!')
         quit()
+
+    what_to_do = int(input('Выберите действие:\n1) Применить функцию к входному файлу.\n2) Тест на скорость.\n3) Построить график.\nВвод:'))
 
     def MinTimeTest():
         return f'10.000 чисел - {test(_min, first_list)}\n500.000 чисел - {test(_min, second_list)}\n10.000.000 чисел - {test(_min, therd_list)}'
