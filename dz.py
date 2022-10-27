@@ -105,8 +105,7 @@ def grafic(func):
 def osip():
     filename = input('Введите имя файла:')
     c = open(filename + '.txt', encoding='utf-8').read().split()
-    
-    f = []
+
     f = []
     if _file(c):
         print('Данные корректны, можем продолжать!\n')
@@ -122,16 +121,33 @@ def osip():
     what_to_do = int(input('Выберите действие:\n1) Применить функцию к входному файлу.\n2) Тест на скорость.\n3) Построить график.\nВвод:'))
 
     def MinTimeTest():
-        return f'10.000 чисел - {test(_min, first_list)}\n500.000 чисел - {test(_min, second_list)}\n10.000.000 чисел - {test(_min, therd_list)}'
+        first_test = test(_min, first_list)
+        second_test = test(_min, second_list)
+        therd_test = test(_min, therd_list)
+
+        return f'10.000 чисел - {first_test}\n500.000 чисел - {second_test} при росте на 490_000 чисел, время выполнения программы увеличивается на {second_test - first_test} \n10.000.000 чисел - {therd_test} при росте на 9_500_000 чисел, время выполнения программы увеличивается на {therd_test - second_test}'
 
     def MaxTimeTest():
-        return f'10.000 чисел - {test(_max, first_list)}\n500.000 чисел - {test(_max, second_list)}\n10.000.000 чисел - {test(_max, therd_list)}'
+        first_test = test(_max, first_list)
+        second_test = test(_max, second_list)
+        therd_test = test(_max, therd_list)
+
+        return f'10.000 чисел - {first_test}\n500.000 чисел - {second_test} при росте на 490_000 чисел, время выполнения программы увеличивается на {second_test - first_test} \n10.000.000 чисел - {therd_test} при росте на 9_500_000 чисел, время выполнения программы увеличивается на {therd_test - second_test}'
 
     def SumTimeTest():
-        return f'10.000 чисел - {test(_sum, first_list)}\n500.000 чисел - {test(_sum, second_list)}\n10.000.000 чисел - {test(_sum, therd_list)}'
+        first_test = test(_sum, first_list)
+        second_test = test(_sum, second_list)
+        therd_test = test(_sum, therd_list)
+
+        return f'10.000 чисел - {first_test}\n500.000 чисел - {second_test} при росте на 490_000 чисел, время выполнения программы увеличивается на {second_test - first_test} \n10.000.000 чисел - {therd_test} при росте на 9_500_000 чисел, время выполнения программы увеличивается на {therd_test - second_test}'
 
     def MultTimeTest():
-        return f'10.000 чисел - {test(_mult, first_list)}\n500.000 чисел - {test(_mult, second_list)}\n10.000.000 чисел - {test(_mult, therd_list)}'
+        first_test = test(_mult, first_list)
+        second_test = test(_mult, second_list)
+        therd_test = test(_mult, therd_list)
+
+        return f'10.000 чисел - {first_test}\n500.000 чисел - {second_test} при росте на 490_000 чисел, время выполнения программы увеличивается на {second_test - first_test} \n10.000.000 чисел - {therd_test} при росте на 9_500_000 чисел, время выполнения программы увеличивается на {therd_test - second_test}'
+
     if what_to_do == 1:
         whatFunc = int(input('Выберите фунцию:\n1) min\n2) max\n3) sum\n4) mult\nВвод:'))
         if whatFunc == 1:
