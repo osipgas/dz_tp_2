@@ -1,4 +1,3 @@
-from functools import reduce
 from tkinter import *
 import time
 import random
@@ -105,7 +104,12 @@ def grafic(func):
     tk.mainloop()
 def osip():
     filename = input('Введите имя файла:')
-    c = open(filename + '.txt', encoding='utf-8').read().split()
+        try:
+        c = open(filename + '.txt', encoding='utf-8').read().split()
+    except FileNotFoundError:
+        print('Файла не существует, попробуйте с другим файлом.')
+        quit()
+    f = []
     f = []
     if _file(c):
         print('Данные корректны, можем продолжать!\n')
