@@ -104,11 +104,8 @@ def grafic(func):
     tk.mainloop()
 def osip():
     filename = input('Введите имя файла:')
-        try:
-        c = open(filename + '.txt', encoding='utf-8').read().split()
-    except FileNotFoundError:
-        print('Файла не существует, попробуйте с другим файлом.')
-        quit()
+    c = open(filename + '.txt', encoding='utf-8').read().split()
+    
     f = []
     f = []
     if _file(c):
